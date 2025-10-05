@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher's Day Tribute</title>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100%;
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(to bottom right, #111, #444);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        #main-div {
+            width: 90%;
+            max-width: 700px;
+            min-width: 230px;
+            min-height: auto;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            text-align: center;
+            border-radius: 25px;
+            border: 2px solid #888;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            font-size: clamp(22px, 4vw, 32px);
+            color: #fff;
+            background: #222;
+            padding: 10px 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            font-size: clamp(18px, 3vw, 24px);
+        }
+
+        .message {
+            font-size: clamp(14px, 2.5vw, 18px);
+            color: #ddd;
+            font-style: italic;
+            margin: 20px 0 40px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000;
+            color: white;
+            text-decoration: none;
+            font-size: clamp(14px, 2.5vw, 16px);
+            border-radius: 10px;
+            transition: 0.3s;
+            border: 1px solid #fff;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 300px) {
+            #main-div {
+                width: 98%;
+                height: 40vh;
+                border-radius: 0;
+                padding: 15px;
+            }
+
+            .header {
+                font-size: 20px;
+                padding: 8px 15px;
+                margin-bottom: 15px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .message {
+                font-size: 13px;
+                margin: 15px 0 20px 0;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-div">
+        <div class="header">Teacher's Day Tribute</div>
+        <h2>HAPPY TEACHER'S DAY</h2>
+        <p class="message">
+            Thank you for your patience, guidance, and dedication. You inspire us to learn, grow, and do our best every day and this code is our thankful letter as you guide us throughout the semester 💌<br>
+            From: BSIT 1A
+        </p>
+        <button onclick="window.location.href='teachday.html'" class="btn">Click for a surprise!</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Teacher's Day!</title>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(to bottom right, #111, #444),
+                        url("https://i.gifer.com/2yqT.gif") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        #main-div {
+            width: 90%;
+            max-width: 450px;
+            min-width: 220px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 25px;
+            border: 2px solid #888;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .typing-message {
+            font-size: clamp(24px, 5vw, 40px);
+            color: #f9feffa1;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px #fff, 0 0 2px #382e33;
+            margin-bottom: 20px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 2.5s steps(30, end) forwards, blink-caret 0.8s step-end infinite;
+        }
+
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink-caret { 0%, 100% { border-color: transparent; } 50% { border-color: #fff; } }
+
+        .cake-img {
+            max-width: 220px;
+            width: 80%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .scroll {
+            background: #fbe7c6;
+            padding: 15px;
+            width: 100%;
+            font-size: 14px;
+            color: #222;
+            border: 2px solid #c9a368;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px #c9a368, 0 0 10px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+
+        .type-line {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(40, end) forwards;
+        }
+
+        .line2 { animation-delay: 2.1s; }
+        .line3 { animation-delay: 5.2s; }
+        .line4 { animation-delay: 9.3s; }
+        .line5 { animation-delay: 12.4s; }
+        .line6 { animation-delay: 15.5s; }
+        .line7 { animation-delay: 18.6s; }
+        .line8 { animation-delay: 23.7s; }
+        .line9 { animation-delay: 27.7s; }
+        .line10 { animation-delay: 30.7s; }
+        .line11 { animation-delay: 34.8s; }
+        .line12 { animation-delay: 37.8s; }
+        @media (max-width: 600px) {
+            #main-div {
+                width: 100vw;
+                height: 100vh;
+                border-radius: 0;
+                padding: 10px;
+                justify-content: center;
+            }
+            .cake-img { max-width: 160px; width: 60vw; }
+            .typing-message { font-size: 18px; }
+            .scroll { font-size: 12px; padding: 10px; }
+        }
+
+        .confetti-piece {
+            position: fixed;
+            top: -10px;
+            border-radius: 50%;
+            opacity: 0.9;
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="confetti"></div>
+    <div id="main-div">
+        <div class="typing-message" id="typing-message"></div>
+        <img src="cake.jpg" class="cake-img" alt="Cake">
+        <div class="scroll">
+            <p class="type-line line1">Happy Teachers’ Day! 💻</p>
+            <p class="type-line line2">We want to take this opportunity to thank you for your </p>
+            <p class="type-line line3">hard work, patience, and dedication. You have not only shared</p>
+            <p class="type-line line4">your knowledge but also inspired us to dream bigger and</p>
+            <p class="type-line line5">believe in ourselves. As we go with another year in the</p>
+            <p class="type-line line6">technology field, your guidance will make our</p>
+            <p class="type-line line7">learning journey fun and challenging. We truly appreciate all</p>
+            <p class="type-line line8">you do every day and your support motivates </p>
+            <p class="type-line line9">us to keep improving pursue our goals with confidence.</p>
+            <p class="type-line line10">filled with gratitude and joy! Wishing you a meaningful </p>
+             <p class="type-line line11">Teachers’ Day With respect and appreciation,</p>
+            <p class="type-line line12 caret">- BSIT 1A</p>
+        </div>
+    </div>
+
+    <script>
+        const el = document.getElementById('typing-message');
+        let msg1 = "Happy Teacher's";
+        let msg2 = "Day Maam/Sir!";
+        let i = 0, j = 0;
+
+        function typeMsg1() {
+            if (i < msg1.length) {
+                el.textContent += msg1.charAt(i);
+                i++;
+                setTimeout(typeMsg1, 80);
+            } else { setTimeout(typeMsg2, 400); }
+        }
+
+        function typeMsg2() {
+            if (j < msg2.length) {
+                el.innerHTML = msg1 + '<br>' + msg2.substring(0, j+1);
+                j++;
+                setTimeout(typeMsg2, 80);
+            } else { el.style.borderRight = 'none'; }
+        }
+
+        typeMsg1();
+
+        function startConfetti() {
+            const colors = ["#ff5f5f", "#ffd700", "#5f9eff", "#6fff5f"];
+            for (let i = 0; i < 150; i++) {
+                let confetti = document.createElement("div");
+                confetti.classList.add("confetti-piece");
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 2 + "s";
+                confetti.style.width = Math.random() * 8 + 4 + "px";
+                confetti.style.height = confetti.style.width;
+                document.body.appendChild(confetti);
+            }
+            setTimeout(() => {
+                document.querySelectorAll(".confetti-piece").forEach(piece => piece.remove());
+            }, 10000); 
+        }
+
+        startConfetti();
+    </script>
+</body>
+</html>
